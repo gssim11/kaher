@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta name="google-site-verification" content="drCMTCuB1KusbNXbMU4uSp8MNn2t7veRrDAwJCVLnt0" />
-  <meta name="naver-site-verification" content="410f4153f582bb55cc8e82e459baf0b6756fe898" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>대한건강운동재활협회 | Korea Association of Health &amp; Exercise Rehabilitation</title>
   <meta name="description" content="대한건강운동재활협회(K.A.H.E.R)는 건강운동·재활 분야의 전문 인재 양성과 교육과정 개발, 자격인증 운영을 통해 국민 건강증진에 이바지하는 전문 협회입니다." />
-  <!-- ※ 배포 후 아래 도메인(kaher-site.vercel.app)을 실제 주소로 바꿔주세요 (README 참고) -->
-  <link rel="canonical" href="https://kaher-site.vercel.app/" />
+  <link rel="canonical" href="https://kaher.vercel.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:site_name" content="대한건강운동재활협회" />
   <meta property="og:title" content="대한건강운동재활협회 (K.A.H.E.R)" />
   <meta property="og:description" content="건강운동·재활 분야의 전문 인재 양성, 교육과정 개발, 자격인증 운영을 통해 국민 건강증진에 이바지합니다." />
-  <meta property="og:url" content="https://kaher-site.vercel.app/" />
-  <meta property="og:image" content="https://kaher-site.vercel.app/assets/logo-vertical-blue.png" />
+  <meta property="og:url" content="https://kaher.vercel.app/" />
+  <meta property="og:image" content="https://kaher.vercel.app/assets/logo-vertical-blue.png" />
   <meta name="twitter:card" content="summary" />
   <link rel="icon" type="image/png" href="assets/emblem-blue.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
@@ -26,8 +23,8 @@
     "@type": "Organization",
     "name": "대한건강운동재활협회",
     "alternateName": "Korea Association of Health & Exercise Rehabilitation",
-    "url": "https://kaher-site.vercel.app/",
-    "logo": "https://kaher-site.vercel.app/assets/emblem-blue.png",
+    "url": "https://kaher.vercel.app/",
+    "logo": "https://kaher.vercel.app/assets/emblem-blue.png",
     "email": "jjangdal@naver.com",
     "telephone": "+82-10-9345-3583",
     "address": {
@@ -127,7 +124,7 @@
         <h2>협회 공인 자격과정</h2>
         <p>운동지도와 기능적 움직임 교육을 목적으로 하는 4개 자격과정을 운영합니다.</p>
       </div>
-      <div class="course-grid" id="featured-certs" style="grid-template-columns:repeat(2,1fr);"><!-- js/data.js 의 CERTS --></div>
+      <div class="course-grid cert-feature-grid" id="featured-certs"><!-- js/data.js 의 CERTS --></div>
       <a class="more-link" href="certificates.html">자격과정 자세히 보기 →</a>
     </div>
   </section>
@@ -172,12 +169,17 @@
         <div>
           <h2>문의 안내</h2>
           <p>교육 일정, 자격과정, 기관 협력에 관한 문의는
-            아래 이메일 또는 전화로 연락해 주시기 바랍니다.</p>
+            아래 연락처 또는 카카오톡 채널로 연락해 주시기 바랍니다.</p>
+          <a class="kakao-btn" data-site-kakao href="https://pf.kakao.com/_urTxcG" target="_blank" rel="noopener">
+            <img src="assets/kakao.svg" alt="" aria-hidden="true" />
+            카카오톡 채널로 문의하기
+          </a>
         </div>
         <div class="contact-list">
           <div><span class="k">대표자</span><span data-site="representative">장한별</span></div>
           <div><span class="k">전화</span><a data-site-tel href="tel:01093453583">010-9345-3583</a></div>
           <div><span class="k">이메일</span><a data-site-mailto href="mailto:jjangdal@naver.com">jjangdal@naver.com</a></div>
+          <div><span class="k">카카오톡</span><a data-site-kakao href="https://pf.kakao.com/_urTxcG" target="_blank" rel="noopener">채널 바로가기</a></div>
           <div><span class="k">주소</span><span data-site="address">경기도 시흥시 동서로 1079-3, 4층 407호</span></div>
         </div>
       </div>
@@ -206,6 +208,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- 카카오톡 채널 플로팅 버튼 -->
+  <a class="kakao-float" data-site-kakao href="https://pf.kakao.com/_urTxcG" target="_blank" rel="noopener" aria-label="카카오톡 채널로 문의하기">
+    <img src="assets/kakao.svg" alt="" aria-hidden="true" />
+    <span class="kakao-float-label">카카오톡 문의</span>
+  </a>
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
