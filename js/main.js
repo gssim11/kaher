@@ -45,11 +45,6 @@ function esc(s) {
   document.querySelectorAll("[data-site-tel]").forEach((a) => {
     a.href = "tel:" + SITE.phone.replace(/-/g, ""); a.textContent = SITE.phone;
   });
-  // 카카오톡 채널 링크 연결 (data.js 의 SITE.kakaoChannel)
-  document.querySelectorAll("[data-site-kakao]").forEach((a) => {
-    if (SITE.kakaoChannel) a.href = SITE.kakaoChannel;
-  });
-
   // 저작권 연도 자동 갱신 (설립연도–현재연도)
   document.querySelectorAll("[data-copyright]").forEach((el) => {
     const now = new Date().getFullYear();

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kaher.vercel.app/sitemap.xml
+Sitemap: https://kaher-site.vercel.app/sitemap.xml

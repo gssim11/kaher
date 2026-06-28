@@ -20,7 +20,6 @@ const SITE = {
   phone: "010-9345-3583",
   email: "jjangdal@naver.com",
   address: "경기도 시흥시 동서로 1079-3, 4층 407호",
-  kakaoChannel: "https://pf.kakao.com/_urTxcG",   // 카카오톡 채널 주소
   establishedYear: "2022",   // 정관 제정 연도 (저작권 표기 시작 연도)
 };
 

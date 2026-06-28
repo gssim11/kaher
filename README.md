@@ -30,7 +30,7 @@ Korea Association of Health & Exercise Rehabilitation (K.A.H.E.R)
 | 명부 기준일 | `ORG_DATE` |
 | 자격과정 4종 내용 | `CERTS` |
 | 공지사항 | `NOTICES` 맨 위에 추가 |
-| 연락처·주소·카카오 채널 | `SITE` (kakaoChannel 포함) |
+| 연락처·주소 | `SITE` |
 | 메인 "협회가 하는 일" | `BUSINESS` |
 | 자격 구분 배지 | `CERTS`의 `reg` ("registered"=등록 민간자격, "association"=협회 인증) |
 | 자격증 견본 이미지 | `assets/certs/` 폴더 + `CERTS`의 `image` 경로 |
@@ -59,15 +59,13 @@ git push -u origin main
 Vercel: https://vercel.com → Add New → Project → 저장소 Import →
 Framework **Other**, 기본값 그대로 → Deploy.
 
-### 도메인 설정 (현재 상태)
+### ⚠️ 배포 직후 1회 작업: 도메인 치환
 
-SEO 태그(canonical/OG)와 sitemap의 주소는 실제 배포 주소인
-`https://kaher.vercel.app` 로 맞춰져 있습니다. 추가 작업 없이 그대로 두면 됩니다.
+SEO 태그(canonical/OG)와 sitemap에 임시 주소 `https://kaher-site.vercel.app` 가 들어 있습니다.
+실제 발급된 주소(또는 협회 도메인)로 한 번에 치환하세요:
 
-나중에 협회 전용 도메인(예: `kaher.or.kr`)을 연결하는 경우에만, 전체 검색으로
-`kaher.vercel.app` → 새 도메인으로 일괄 치환하세요.
-- 대상 파일: html 5개(index/about/certificates/rules/notice), robots.txt, sitemap.xml
-- Vercel 프로젝트 → Settings → Domains 에서도 새 도메인을 추가
+- VS Code: 전체 검색(Ctrl+Shift+F)으로 `kaher-site.vercel.app` → 실제 도메인 바꾸기
+- 대상 파일: html 5개, robots.txt, sitemap.xml
 
 ## 4. 설계 원칙 (유지 시 참고)
 
