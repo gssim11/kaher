@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>자격증 진위확인 | 대한건강운동재활협회</title>
   <meta name="description" content="대한건강운동재활협회가 발급한 자격증의 진위(발급 사실)를 발급번호로 확인하는 공식 진위확인 페이지입니다." />
-  <link rel="canonical" href="https://kaher-site.vercel.app/verify.html" />
+  <link rel="canonical" href="https://kaher.vercel.app/verify.html" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:site_name" content="대한건강운동재활협회" />
   <meta property="og:title" content="자격증 진위확인 | 대한건강운동재활협회" />
   <meta property="og:description" content="발급번호로 협회 자격증의 발급 사실과 위변조 여부를 확인합니다." />
-  <meta property="og:url" content="https://kaher-site.vercel.app/verify.html" />
-  <meta property="og:image" content="https://kaher-site.vercel.app/assets/logo-vertical-blue.png" />
+  <meta property="og:url" content="https://kaher.vercel.app/verify.html" />
+  <meta property="og:image" content="https://kaher.vercel.app/assets/logo-vertical-blue.png" />
   <meta name="twitter:card" content="summary" />
   <link rel="icon" type="image/png" href="assets/emblem-blue.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
@@ -174,7 +174,8 @@
       showRes("warn","조회 중입니다…");
       var p = sb ? queryServer(serial).catch(function(){return loadFallback().then(function(){return queryFallback(serial);});})
                  : loadFallback().then(function(){return queryFallback(serial);});
-      p.then(function(r){ if(!r){notFound(serial);} else {render(r);} })
+      p.then(function(r){ var found=!!r; if(!found){notFound(serial);} else {render(r);}
+        if(sb){try{sb.from('verify_logs').insert({serial:serial,found:found}).then(function(){},function(){});}catch(e){}} })
        .catch(function(){ showRes("warn","조회 중 오류가 발생했습니다. 인터넷 연결을 확인하고 다시 시도해 주세요."); });
     };
 
