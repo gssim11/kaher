@@ -49,15 +49,17 @@ module.exports = async (req, res) => {
       '<p style="font-size:12px;color:#8a94a3;margin-top:16px;">본 메일은 자동 발송되었습니다. 상세 내역은 발급관리 시스템에서 확인하실 수 있습니다.</p>' +
       '</div></div>';
 
+    const emailBody = JSON.stringify({
+      from: "KAHER <onboarding@resend.dev>",
+      to: [RECIPIENT],
+      subject: "[KAHER] 자격증 진위확인 일일요약 (" + day + ")",
+      html
+    });
     const er = await fetch("https://api.resend.com/emails", {
       method: "POST",
-      headers: { Authorization: "Bearer " + process.env.RESEND_API_KEY, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from: "대한건강운동재활협회 <onboarding@resend.dev>",
-        to: [RECIPIENT],
-        subject: "[KAHER] 자격증 진위확인 일일요약 (" + day + ")",
-        html
-      })
+      headers: { Authorization: "Bearer " + process.env.RESEND_API_KEY, "Content-Type": "application/json; charset=utf-8" },
+      // 한글(멀티바이트) 본문을 UTF-8 바이트로 인코딩해 전송 (ByteString 오류 방지)
+      body: new TextEncoder().encode(emailBody)
     });
     const eb = await er.json();
     return res.status(200).json({ ok: true, day, total, found, notFound, email: eb });
